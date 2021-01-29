@@ -1,0 +1,14 @@
+body{
+    margin:0;
+    padding: 0;
+    background-image: url("img/portfoliobg.jpg");
+    background-repeat: repeat;
+    background-size: 500px auto;
+}
+
+@media only screen and (max-width: 767px){
+    body{
+        background-size: 200px;
+
+    }
+}
