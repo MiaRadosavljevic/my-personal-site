@@ -6,7 +6,9 @@
    box-sizing: border-box;
    line-height: 1.5;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: black;
     color: white;
@@ -29,9 +31,8 @@ body{
 }
 
 .link-grow{
-    transform: scale(2);
+    transform: scale(1.7);
     background-color:  black;
-    border: none;
 }
 
 .hovered-link{
@@ -64,53 +65,71 @@ header {
     align-items: flex-start;
 }
 
-.logo{
-    margin-top: 30px;
-    margin-left: 3%;
-    flex:1;
-    position: relative;
-    z-index: 20000;
+.svg{
+    position: absolute;
+    left:-100%;
+    overflow: hidden;
+    animation: jwdAnimation 4s forwards;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes jwdAnimation{
+    
+    10%{
+        left:-100%;
+    }
+    100%{
+        left:0px;
+    }
 }
 
 .nav-bar{
     list-style-type: none;
     display:flex;
     font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 1.3rem;
-    justify-content: center;
-    flex:3;
-
+    font-weight: 400;
+    font-size: 1.1rem;
+    flex:4;
+    justify-content: flex-end;
 }
+
 
 .header-li{
     padding: 1rem;
-    margin: 30px 15% 30px 0;
+    margin: 20px 8% 20px 0;
     
 }
 
 .header-li-last{
-    margin-right:0;
+    margin-right:30px;
 }
 
-.temporary{
-    text-align: right;
-    padding-right: 50px;
-    text-transform: uppercase;
-    font-family: 'Martel Sans', sans-serif;
-    flex:1;
-    margin-top: 10px;
-}
 
 .big-text{
     font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 6em;
+    font-weight: 700;
+    font-size: 5em;
     position:absolute;
     top: 40%;
-    left:45%;
+    left:15%;
+    opacity: 0;
     z-index: 504;
+    animation:bigTextAnimation 2s forwards;
+    animation-delay: 2s;
 }
 
-.line-1{
+@keyframes bigTextAnimation{
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+
+
+/*.line-1{
     width:400px;
     height:12px;
     background-color: #CBFFCB;
@@ -147,7 +166,7 @@ header {
     top: 30%;
     left:70%;
     z-index: 500;
-}
+}*/
 
 /*beggining animation*/
 
@@ -162,15 +181,13 @@ header {
     display:flex;
     align-items: center;
     justify-content:center;
-    animation: backgroundAnimation 2.5s forwards;
+    animation: backgroundAnimation 3s forwards;
 }
 
 h1.welcome{
-    color: #2a2a2a;
+    color:#CBFFCB;
     font-family: 'Montserrat Alternates', sans-serif;
     font-size: 4rem;
-    animation: textColor 2.5s forwards;
-    animation-timing-function: ease-in;
 }
 
 h2.intro-text{
@@ -181,27 +198,19 @@ h2.intro-text{
 
 @keyframes backgroundAnimation{
     40%{
-        background-color: #2a2a2a;
+        background-color:black;
         transform: translateY(0);
     }
     70%{
-        background-color: #2a2a2a;
+        background-color: #000000;
         transform: translateY(0);
     }
     100%{
-        background-color: #2a2a2a;
+        background-color: #000000;
         transform: translateY(-100%);
     }
 }
 
-@keyframes textColor{
-    40%{
-        color:#CBFFCB;
-    }
-    100%{
-        color:#CBFFCB;
-    }
-}
 
 /*main*/
 
@@ -224,6 +233,7 @@ main{
 .text-title{
     color: #CBFFCB;
     font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 700;
     font-size: 2.5rem;
     margin: 150px 0 30px 12%;
 
@@ -377,7 +387,7 @@ main{
 
 .contact-bg{
     width:1000px;
-    height:570px;
+    height:600px;
     margin: 100px auto;
     padding:50px;
     background: linear-gradient(151.84deg, rgba(203, 255, 203, 0.6) 0%, rgba(255, 255, 255, 0.2) 100%);
@@ -479,7 +489,7 @@ input:focus, textarea:focus{
 }
 
 #nav-bar{
-    flex:2;
+    flex:1;
 }
 
 .svg-bar{
@@ -487,6 +497,7 @@ input:focus, textarea:focus{
     list-style-type: none;
     flex: 1;
     justify-content: center;
+    transform:scale(0.8);
 }
 
 #insta-icon{
@@ -511,27 +522,18 @@ input:focus, textarea:focus{
 @media only screen and (max-width: 1100px) and (min-width: 700px) {
     .big-text{
         font-size: 4.5rem;
-        left:40%;
+        left:10%;
     }
-    .logo{
-        transform: scale(0.8);
-        margin-top: 10px
-    }
+
 
     .nav-bar{
         font-size: 1rem;
-        flex:4;
     }
 
     .header-li{
         padding: 0.7rem;
         margin: 30px 8% 30px 0;
         
-    }
-
-    .temporary{
-    font-size: 0.8rem;  
-    padding-right: 20px;      
     }
 
     .line-5,.me-photo, .purple-photo, .site-description{
@@ -596,11 +598,12 @@ input:focus, textarea:focus{
 
     .nav-bar{
         font-size: 1rem;
+        justify-content: center;
     }
 
     .header-li{
         padding: 0.7rem;
-        margin: 30px 0;
+        margin: 30px 20px;
         
     }
 
@@ -694,16 +697,12 @@ input:focus, textarea:focus{
 }
 
 @media only screen and (max-width: 450px) {
+    
 
     .big-text{
-        font-size: 3rem;
-        left:15%;
+        font-size: 2.5rem;
+        left:10%;
     }
-
-    .logo{
-        display: none;
-    }
-
 }
 
 @media only screen and (max-width: 700px) and (min-width: 450px){
@@ -711,11 +710,6 @@ input:focus, textarea:focus{
     .big-text{
         font-size: 4rem;
         left:15%;
-    }
-
-    .logo{
-        transform: scale(0.7);
-        margin: 0;
     }
 
 }
