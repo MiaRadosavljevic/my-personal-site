@@ -59,17 +59,12 @@ header {
     position: relative;
 }
 
-.nav{
-    display:flex;
-    justify-content: center;
-    align-items: flex-start;
-}
 
 .svg{
     position: absolute;
     left:-100%;
     overflow: hidden;
-    animation: jwdAnimation 4s forwards;
+    animation: jwdAnimation 3s forwards;
     animation-delay: 1s;
     animation-timing-function: ease-in;
 }
@@ -81,6 +76,7 @@ header {
     }
     100%{
         left:0px;
+        top:100px;
     }
 }
 
@@ -90,19 +86,23 @@ header {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 400;
     font-size: 1.1rem;
-    flex:4;
     justify-content: flex-end;
+}
+
+#nav-bar{
+    position: fixed;
+    z-index: 99900;
+    right:0%;
 }
 
 
 .header-li{
     padding: 1rem;
-    margin: 20px 8% 20px 0;
-    
+    margin: 20px 10%;
 }
 
 .header-li-last{
-    margin-right:30px;
+    margin-right:50px;
 }
 
 
@@ -129,44 +129,44 @@ header {
 }
 
 
-/*.line-1{
+.line-1{
     width:400px;
-    height:12px;
+    height:10px;
     background-color: #CBFFCB;
     position: absolute;
-    top: 60%;
+    top: 50%;
     left:60%;
     z-index: 503;
 }
 
 .line-2{
     width:400px;
-    height:12px;
+    height:10px;
     background-color: #C209FF;
     position: absolute;
     top: 80%;
-    left:35%;
+    left:30%;
     z-index: 502;
 }
-.line-3{
-    width:12px;
+/*.line-3{
+    width:10px;
     height:400px;
     background-color: #CBFFCB;
     position: absolute;
     top: 60%;
     left:40%;
     z-index: 501;
-}
+}*/
 
 .line-4{
-    width:12px;
+    width:10px;
     height:400px;
     background-color: #C209FF;
     position: absolute;
     top: 30%;
     left:70%;
     z-index: 500;
-}*/
+}
 
 /*beggining animation*/
 
@@ -488,10 +488,18 @@ input:focus, textarea:focus{
     outline:none;
 }
 
-#nav-bar{
+#nav-bar-2{
     flex:1;
 }
 
+.header-li-2{
+    padding: 1rem;
+    margin: 20px 8% 20px 0;
+}
+
+.header-li-last-2{
+    margin-right:30px;
+}
 .svg-bar{
     display:flex;
     list-style-type: none;
@@ -545,9 +553,13 @@ input:focus, textarea:focus{
         height: 7px;
     }
 
-    .line-3, .line-4{
+    /*.line-3,*/ .line-4{
         width:7px;
         height:200px;
+    }
+
+    .line-1{
+        top:40%;
     }
 
     .about-container{
@@ -608,7 +620,7 @@ input:focus, textarea:focus{
     }
 
 
-     .line-1, .line-2, .line-3, .line-4, .line-5,
+     .line-1, .line-2, /*.line-3*,*/ .line-4, .line-5,
     .line-6, .line-7, .me-photo, .purple-photo, .site-description,
     .temporary, .cursor, .portfolio-flex{
         display: none;
